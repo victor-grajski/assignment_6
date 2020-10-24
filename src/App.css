@@ -36,3 +36,126 @@
     transform: rotate(360deg);
   }
 }
+
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+a:visited {
+  color: white;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 8.333333fr);
+  grid-template-rows: repeat(5, 164px);
+  grid-gap: 20px;
+  grid-auto-rows: 164px;
+  justify-content: left;
+  align-items: top;
+  align-content: start;
+  grid-auto-flow: column;
+}
+.off-white {
+  background-color: #eee;
+}
+
+header {
+  grid-area: 1 / 2 / span 1 / span 10;
+  display: grid;
+  grid-template-columns: repeat(10, 10fr);
+  grid-template-rows: repeat(1, 164px);
+  grid-gap: 20px;
+  border-bottom: 1px solid black;
+}
+.logo-container-container {
+  grid-area: 1 / 1 / span 1 / span 2;
+  display: flex;
+  justify-content: left;
+  align-items: flex-end;
+}
+.logo-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row;
+}
+.logo-icon {
+  width: 101px;
+  height: 101px;
+}
+.logo-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+.page-title {
+  grid-area: 1 / 3 / span 1 / span 4;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  font-style: normal;
+  font-size: 32px;
+  font-weight: bold;
+}
+.sort-container {
+  grid-area: 1 / 7 / span 1 / span 3;
+  display: grid;
+  grid-template-columns: 33fr 66fr;
+  grid-template-rows: repeat(1, 164px);
+  grid-gap: 20px;
+}
+.sort-label {
+  grid-area: 1 / 1 / span 1 / span 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 25px;
+  font-size: 18px;
+}
+.sort-select {
+  grid-area: 1 / 2 / span 1 / span 2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-bottom: 10px;
+}
+.products-link-container {
+  grid-area: 1 / 9 / span 1 / span 2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-bottom: 20px;
+  font-size: 20px;
+}
+.cart-container {
+  grid-area: 1 / 10 / span 1 / span 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 10px;
+}
+.drop-shadow {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.dropdown {
+  background: #D3D3D3;
+  border-radius: 10px;
+  height: 50px;
+  border: 0px;
+  outline: 0px;
+}
+.light {
+  background: #eee;
+}
+.header-link {
+  color: black;
+}
+.header-link:visited {
+  color: black;
+}
