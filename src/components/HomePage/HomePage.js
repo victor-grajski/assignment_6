@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import './HomePage.css';
 
 import banner from '../../assets/photos/landing.jpg';
@@ -9,6 +10,7 @@ import catGPSCollar from '../../assets/photos/cat-gps-collar.jpg';
 import dogGPSCollar from '../../assets/photos/dog-gps-collar.jpg';
 import catDogHarnessFoodStorage from '../../assets/photos/cat-and-dog-harness-food-storage.jpg';
 import catDogHarnessWaterStorage from '../../assets/photos/cat-and-dog-harness-water-storage.jpg';
+import appRoutes from "../../shared/appRoutes";
 
 
 const HomePage = () => {
@@ -24,7 +26,7 @@ const HomePage = () => {
             <h3 className="landing-subtitle landing-text">Customizable hiking and adventuring gear for your cat or dog</h3>
         </div>
         <div className="landing-top-cta-container">
-            <a href="products.html"><div className="landing-cta-button drop-shadow">Shop Now</div></a>
+            <NavLink to={appRoutes.products}><div className="landing-cta-button drop-shadow">Shop Now</div></NavLink>
         </div>
         <div className="landing-learn-more-container">
             <p className="landing-text">Learn More</p>
@@ -90,7 +92,7 @@ const HomePage = () => {
             </div>
         </div>
         <div className="landing-bottom-cta-container">
-            <a href="products.html"><div className="landing-cta-button drop-shadow">Shop Now</div></a>
+            <NavLink to={appRoutes.products}><div className="landing-cta-button drop-shadow">Shop Now</div></NavLink>
         </div>
     </div>
   );
