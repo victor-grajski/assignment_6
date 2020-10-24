@@ -115,40 +115,43 @@ const Products = () => {
                 </div>
             </div>
 
-            <div className="selected-filters">
-                <div className="selected-filter">Pet: Cat</div>
-                <div className="selected-filter">Pet: Dog</div>
-                <div className="selected-filter-label">Tap to clear</div>
-            </div>
+            
 
-            <div className="products">
-                <NavLink to={appRoutes.product} className="product-container">
-                    <div className="product-image-container">
-                        <img src={catHarness} className="product-image" alt="cat harness" />
-                    </div>
-                    <div className="product-title">Cat Harness</div>
-                    <div className="product-info-container">
-                        <div className="product-info-left">
-                            <div className="product-price">$19.99</div>
-                            <div className="product-colors-container">
-                                <object type="image/svg+xml" data={strawberry} className="color-icon">Strawberry</object>
-                                <object type="image/svg+xml" data={blackberry} className="color-icon">Blackberry</object>
-                                <object type="image/svg+xml" data={crazyBerry} className="color-icon">Crazy Berry</object>
-                                <object type="image/svg+xml" data={fireOrange} className="color-icon">Fire Orange</object>
+            <div className="products-wrapper">
+                <div className="selected-filters">
+                    <div className="selected-filter">Pet: Cat</div>
+                    <div className="selected-filter">Pet: Dog</div>
+                    <div className="selected-filter-label">Tap to clear</div>
+                </div>
+                <div className="products-grid">
+                    <NavLink to={appRoutes.product} className="product-container">
+                        <div className="product-image-container">
+                            <img src={catHarness} className="product-image" alt="cat harness" />
+                        </div>
+                        <div className="product-title">Cat Harness</div>
+                        <div className="product-info-container">
+                            <div className="product-info-left">
+                                <div className="product-price">$19.99</div>
+                                <div className="product-colors-container">
+                                    <object type="image/svg+xml" data={strawberry} className="color-icon">Strawberry</object>
+                                    <object type="image/svg+xml" data={blackberry} className="color-icon">Blackberry</object>
+                                    <object type="image/svg+xml" data={crazyBerry} className="color-icon">Crazy Berry</object>
+                                    <object type="image/svg+xml" data={fireOrange} className="color-icon">Fire Orange</object>
+                                </div>
+                            </div>
+                            <div className="product-info-right">
+                                <div className="product-review-stars-container">
+                                    <object type="image/svg+xml" data={star} className="star-icon">Star</object>
+                                    <object type="image/svg+xml" data={star} className="star-icon">Star</object>
+                                    <object type="image/svg+xml" data={star} className="star-icon">Star</object>
+                                    <object type="image/svg+xml" data={star} className="star-icon">Star</object>
+                                    <object type="image/svg+xml" data={star} className="star-icon">Star</object>
+                                </div>
+                                <div className="product-reviews-description">322 reviews</div>
                             </div>
                         </div>
-                        <div className="product-info-right">
-                            <div className="product-review-stars-container">
-                                <object type="image/svg+xml" data={star} className="star-icon">Star</object>
-                                <object type="image/svg+xml" data={star} className="star-icon">Star</object>
-                                <object type="image/svg+xml" data={star} className="star-icon">Star</object>
-                                <object type="image/svg+xml" data={star} className="star-icon">Star</object>
-                                <object type="image/svg+xml" data={star} className="star-icon">Star</object>
-                            </div>
-                            <div className="product-reviews-description">322 reviews</div>
-                        </div>
-                    </div>
-                </NavLink>
+                    </NavLink>
+                </div>
             </div>
         </div>
   );
