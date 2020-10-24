@@ -22,15 +22,19 @@
     object-fit: cover;
     border-radius: 10px;
 }
-.detail-main-info {
+.detail-main-info-wrapper {
     grid-area: 2 / 7 / span 1 / span 3;
+}
+.detail-main-info {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+    margin-bottom: 30px;
 }
 .detail-title {
     font-size: 36px;
+    height: 100px;
 }
 .detail-price {
     padding-top: 24px;
@@ -52,6 +56,7 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 .detail-size-container {
     display: flex;

@@ -1,6 +1,7 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useParams, NavLink } from "react-router-dom";
 import appRoutes from "../../../shared/appRoutes";
+import products from '../../../shared/products';
 import './Product.css';
 
 import paw from '../../../assets/icons/paw.svg';
@@ -16,10 +17,23 @@ import blackberryDetailSelected from '../../../assets/icons/blackberry-detail-se
 import crazyBerryDetail from '../../../assets/icons/crazyberry-detail.svg';
 import fireOrangeDetail from '../../../assets/icons/fire-orange-detail.svg';
 
-// import catHarness from '../../assets/photos/cat-harness.jpg';
+import dogHarnessFoodStorage from '../../../assets/photos/dog-harness-food-storage.jpg';
+import dogHarnessWaterStorage from '../../../assets/photos/dog-harness-water-storage.jpg';
+import huskerino from '../../../assets/photos/huskerino.jpg';
+import pointyBoye from '../../../assets/photos/pointy-boye.jpg';
 
-
+// TODO: rating
+// TODO: detail color selection
+// TODO: add to cart
 const Product = () => {
+  const { id } = useParams();
+  const product = products[id];
+  let { image, name, description, reviews, type, price } = product;
+
+  useEffect(() => {
+    console.log(product);
+  });
+
   return (
     <div className="container off-white">
         <header>
@@ -40,70 +54,80 @@ const Product = () => {
         </header>
 
         <div className="detail-addl-images">
-            <img src="assets/photos/dog-harness-food-storage.jpg" className="detail-addl-image drop-shadow" alt="additional" />
-            <img src="assets/photos/dog-harness-water-storage.jpg" className="detail-addl-image drop-shadow" alt="additional" />
-            <img src="assets/photos/huskerino.jpg" className="detail-addl-image drop-shadow" alt="additional" />
-            <img src="assets/photos/pointy-boye.jpg" className="detail-addl-image drop-shadow" alt="additional" />
+            {type === "dog" ? (
+                <div>
+                    <img src={dogHarnessFoodStorage} className="detail-addl-image drop-shadow" alt="additional" />
+                    <img src={dogHarnessWaterStorage} className="detail-addl-image drop-shadow" alt="additional" />
+                    <img src={huskerino} className="detail-addl-image drop-shadow" alt="additional" />
+                    <img src={pointyBoye} className="detail-addl-image drop-shadow" alt="additional" />
+                </div>
+            ) : (
+                <div>
+                    <img src="assets/photos/dog-harness-food-storage.jpg" className="detail-addl-image drop-shadow" alt="additional" />
+                    <img src="assets/photos/dog-harness-water-storage.jpg" className="detail-addl-image drop-shadow" alt="additional" />
+                    <img src="assets/photos/huskerino.jpg" className="detail-addl-image drop-shadow" alt="additional" />
+                    <img src="assets/photos/pointy-boye.jpg" className="detail-addl-image drop-shadow" alt="additional" />
+                </div>
+            )}
+            
             <object type="image/svg+xml" data={downArrowDark}>Down Arrow</object>
         </div>
         <div className="detail-main-image-container">
-            <img src="assets/photos/dog-harness.jpg" className="detail-main-image drop-shadow" alt="main" />
+            <img src={image} className="detail-main-image drop-shadow" alt="main" />
         </div>
-        <div className="detail-main-info">
-            <h3 className="detail-title">Dog Harness</h3>
-            <p className="detail-price">$24.99</p>
-            <div className="detail-info-reviews-container">
-                <div className="detail-info-review-stars-container">
-                    <object type="image/svg+xml" data={star} className="star-icon">Star</object>
-                    <object type="image/svg+xml" data={star} className="star-icon">Star</object>
-                    <object type="image/svg+xml" data={star} className="star-icon">Star</object>
-                    <object type="image/svg+xml" data={star} className="star-icon">Star</object>
-                    <object type="image/svg+xml" data={star} className="star-icon">Star</object>
-                </div>
-                <div className="detail-info-reviews-description">68 reviews</div>
-            </div>
-        </div>
-        <div className="detail-size-color">
-            <div className="detail-size-container">
-                <div className="detail-size-label">Size</div>
-                <div className="detail-size-dropdown-container">
-                    <select name="size-options" className="detail-size-dropdown dropdown drop-shadow" id="size-options">
-                        <option value="Large">Large</option>
-                        <option value="Tiny">Tiny</option>
-                        <option value="Small">Small</option>
-                        <option value="Medium">Medium</option>
-                        </select>
+        <div className="detail-main-info-wrapper">
+            <div className="detail-main-info">
+                <h3 className="detail-title">{name}</h3>
+                <p className="detail-price">{price}</p>
+                <div className="detail-info-reviews-container">
+                    <div className="detail-info-review-stars-container">
+                        <object type="image/svg+xml" data={star} className="star-icon">Star</object>
+                        <object type="image/svg+xml" data={star} className="star-icon">Star</object>
+                        <object type="image/svg+xml" data={star} className="star-icon">Star</object>
+                        <object type="image/svg+xml" data={star} className="star-icon">Star</object>
+                        <object type="image/svg+xml" data={star} className="star-icon">Star</object>
+                    </div>
+                    <div className="detail-info-reviews-description">{reviews} reviews</div>
                 </div>
             </div>
-            <div className="detail-color-container">
-                <div className="detail-color-label">Color</div>
-                <div className="detail-color-picker">
-                    <div className="tooltip">
-                        <object type="image/svg+xml" data={strawberryDetail} className="color-icon">Strawberry</object>
-                        <span className="tooltiptext">Strawberry</span>
-                    </div>
-                    <div className="tooltip">
-                        <object type="image/svg+xml" data={blackberryDetailSelected} className="color-icon">Blackberry</object>
-                        <span className="tooltiptext">Blackberry</span>
-                    </div>
-                    <div className="tooltip">
-                        <object type="image/svg+xml" data={crazyBerryDetail} className="color-icon">Crazy Berry</object>
-                        <span className="tooltiptext">Crazy Berry</span>
-                    </div>
-                    <div className="tooltip">
-                        <object type="image/svg+xml" data={fireOrangeDetail} className="color-icon">Fire Orange</object>
-                        <span className="tooltiptext">Fire Orange</span>
+            <div className="detail-size-color">
+                <div className="detail-size-container">
+                    <div className="detail-size-label">Size</div>
+                    <div className="detail-size-dropdown-container">
+                        <select name="size-options" className="detail-size-dropdown dropdown drop-shadow" id="size-options">
+                            <option value="Large">Large</option>
+                            <option value="Tiny">Tiny</option>
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            </select>
                     </div>
                 </div>
-                <div className="detail-color-selected-label">Blackberry</div>
+                <div className="detail-color-container">
+                    <div className="detail-color-label">Color</div>
+                    <div className="detail-color-picker">
+                        <div className="tooltip">
+                            <object type="image/svg+xml" data={strawberryDetail} className="color-icon">Strawberry</object>
+                            <span className="tooltiptext">Strawberry</span>
+                        </div>
+                        <div className="tooltip">
+                            <object type="image/svg+xml" data={blackberryDetailSelected} className="color-icon">Blackberry</object>
+                            <span className="tooltiptext">Blackberry</span>
+                        </div>
+                        <div className="tooltip">
+                            <object type="image/svg+xml" data={crazyBerryDetail} className="color-icon">Crazy Berry</object>
+                            <span className="tooltiptext">Crazy Berry</span>
+                        </div>
+                        <div className="tooltip">
+                            <object type="image/svg+xml" data={fireOrangeDetail} className="color-icon">Fire Orange</object>
+                            <span className="tooltiptext">Fire Orange</span>
+                        </div>
+                    </div>
+                    <div className="detail-color-selected-label">Blackberry</div>
+                </div>
             </div>
+            <div className="detail-description">{description}</div>
         </div>
-        <div className="detail-description">
-            Whether you’re looking to take your pupper to a sled race or you just need to race around town, 
-            our harness will get the job done! Your good boye or gurl will stay comfortable 
-            thanks to our patented choke-free design. No more pulling at the leash then worrying 
-            you’re hurting your doggo!
-        </div>
+        
 
         <div className="detail-reviews-container">
             <div className="detail-reviews-first-row">
