@@ -11,6 +11,7 @@ import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
 import Confirmation from './components/Confirmation/Confirmation';
 
+// TODO: title tags
 const App = () => {
     return (
       <Switch>

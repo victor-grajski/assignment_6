@@ -39,6 +39,7 @@ const AddedToCart = () => {
             <div className="added-to-cart-cta-container">
                 <NavLink to={appRoutes.cart} className="added-to-cart-view-cart-button drop-shadow">View Cart</NavLink>
                 <div className="added-to-cart-checkout-button drop-shadow">Checkout</div>
+                <div className="added-to-cart-checkout-button drop-shadow">Undo</div>
             </div>
             <div className="related-products-title">Related Products</div>
             <div className="related-products-grid">

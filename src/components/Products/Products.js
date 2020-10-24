@@ -50,11 +50,11 @@ const Products = () => {
                     <div className="products-sidebar-check-title">Pet</div>
                     <div className="products-sidebar-check-item-group">
                         <div className="products-sidebar-check-item">
-                            <input type="checkbox" id="pet" name="pet" value="Cat" />
+                            <input type="checkbox" id="pet" name="pet" value="Cat" checked />
                             <label for="pet">Cat</label>
                         </div>
                         <div className="products-sidebar-check-item">
-                            <input type="checkbox" id="pet" name="pet" value="Dog" />
+                            <input type="checkbox" id="pet" name="pet" value="Dog" checked />
                             <label for="pet">Dog</label>
                         </div>
                     </div>
@@ -113,6 +113,12 @@ const Products = () => {
                         <label for="color">Fire Orange</label>
                     </div>
                 </div>
+            </div>
+
+            <div className="selected-filters">
+                <div className="selected-filter">Pet: Cat</div>
+                <div className="selected-filter">Pet: Dog</div>
+                <div className="selected-filter-label">Tap to clear</div>
             </div>
 
             <div className="products">

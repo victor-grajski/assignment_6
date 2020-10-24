@@ -29,8 +29,36 @@
 .products-sidebar-check-item label {
     margin-left: 5px;
 }
+.selected-filters {
+    grid-area: 2 / 4 / span 1 / span 8;
+    display: flex;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-left: 35px;
+    height: 100px;
+}
+.selected-filter {
+    margin-right: 20px;
+    border-radius: 5px;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #219897;
+    color: white;
+    font-weight: bold;
+}
+.selected-filter-label {    
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .products {
-    grid-area: 2 / 4 / span 10 / span 8;
+    grid-area: 3 / 4 / span 10 / span 8;
     display: grid;
     grid-template-columns: repeat(2, 50fr);
     grid-template-rows: repeat(3, 348px);

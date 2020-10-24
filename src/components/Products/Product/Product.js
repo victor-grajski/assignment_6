@@ -12,7 +12,7 @@ import rightArrow from '../../../assets/icons/right-arrow.svg';
 import password from '../../../assets/icons/password.svg';
 import starSmallEmpty from '../../../assets/icons/star-small-empty.svg';
 import strawberryDetail from '../../../assets/icons/strawberry-detail.svg';
-import blackberryDetail from '../../../assets/icons/blackberry-detail.svg';
+import blackberryDetailSelected from '../../../assets/icons/blackberry-detail-selected.svg';
 import crazyBerryDetail from '../../../assets/icons/crazyberry-detail.svg';
 import fireOrangeDetail from '../../../assets/icons/fire-orange-detail.svg';
 
@@ -78,11 +78,24 @@ const Product = () => {
             <div className="detail-color-container">
                 <div className="detail-color-label">Color</div>
                 <div className="detail-color-picker">
-                    <object type="image/svg+xml" data={strawberryDetail} className="color-icon">Strawberry</object>
-                    <object type="image/svg+xml" data={blackberryDetail} className="color-icon">Blackberry</object>
-                    <object type="image/svg+xml" data={crazyBerryDetail} className="color-icon">Crazy Berry</object>
-                    <object type="image/svg+xml" data={fireOrangeDetail} className="color-icon">Fire Orange</object>
+                    <div className="tooltip">
+                        <object type="image/svg+xml" data={strawberryDetail} className="color-icon">Strawberry</object>
+                        <span className="tooltiptext">Strawberry</span>
+                    </div>
+                    <div className="tooltip">
+                        <object type="image/svg+xml" data={blackberryDetailSelected} className="color-icon">Blackberry</object>
+                        <span className="tooltiptext">Blackberry</span>
+                    </div>
+                    <div className="tooltip">
+                        <object type="image/svg+xml" data={crazyBerryDetail} className="color-icon">Crazy Berry</object>
+                        <span className="tooltiptext">Crazy Berry</span>
+                    </div>
+                    <div className="tooltip">
+                        <object type="image/svg+xml" data={fireOrangeDetail} className="color-icon">Fire Orange</object>
+                        <span className="tooltiptext">Fire Orange</span>
+                    </div>
                 </div>
+                <div className="detail-color-selected-label">Blackberry</div>
             </div>
         </div>
         <div className="detail-description">

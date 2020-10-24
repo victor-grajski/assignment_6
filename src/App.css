@@ -73,6 +73,17 @@ header {
   grid-gap: 20px;
   border-bottom: 1px solid black;
 }
+.checkout-back {
+  grid-area: 1 / 8 / span 1 / span 2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-bottom: 20px;
+  font-size: 20px;
+}
+.checkout-back a {
+  color: black;
+}
 .logo-container-container {
   grid-area: 1 / 1 / span 1 / span 2;
   display: flex;

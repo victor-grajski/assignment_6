@@ -19,6 +19,8 @@ const Checkout = () => {
                 <div className="page-title">
                     <h1>Checkout</h1>
                 </div>
+                <div className="checkout-back">
+                    <NavLink to={appRoutes.cart}>Back</NavLink></div>
                 <div className="products-link-container">
                     <NavLink to={appRoutes.products} className="header-link">Products</NavLink>
                 </div>

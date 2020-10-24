@@ -77,6 +77,31 @@
 .detail-color-label {
     margin-right: 30px;
     font-size: 24px;
+    padding-top: 18px;
+}
+.detail-color-picker {
+    width: 100px;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+  }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+.detail-color-selected-label {
+    padding-top: 25px;
 }
 .detail-description {
     grid-area: 4 / 7 / span 1 / span 3;
