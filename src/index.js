@@ -4,11 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 ReactDOM.render(
   <React.StrictMode>
     <HashRouter basename="/">
-      <App />
+      <ScrollToTop>
+        <App />
+      </ScrollToTop>
     </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')

@@ -1,0 +1,112 @@
+.cart-image-container {
+    grid-area: 2 / 3 / span 1 / span 2;
+}
+.cart-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.cart-main-info-container {
+    grid-area: 2 / 5 / span 1 / span 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.cart-item-title {
+    font-size: 32px;
+}
+.cart-item-size, .cart-item-color {
+    margin-top: 5px;
+    font-size: 24px;
+}
+.cart-item-quantity-container {
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+.cart-item-quantity-label {
+    width: 50%;
+    font-size: 24px;
+}
+.cart-item-quantity-dropdown-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.cart-quantity-dropdown {
+    height: 100%;
+    width: 90%;
+}
+
+.cart-side-info-container {
+    grid-area: 2 / 7 / span 1 / span 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column;
+}
+.cart-item-price {
+    margin-top: 8px;
+    font-size: 24px;
+}
+.cart-item-delete {
+    margin-bottom: 10px;
+    font-size: 24px;
+    margin-top: auto;
+    color: #219897;
+}
+.cart-hr {
+    grid-area: 3 / 3 / span 1 / span 5;
+    border-top: 1px solid black;
+    margin: 0 -20px;
+}
+.cart-cta-container {
+    grid-area: 2 / 9 / span 1 / span 3;
+    background: #D3D3D3;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.subtotal-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 24px;
+}
+.subtotal-label {
+    margin-right: 20px;
+}
+.subtotal-num {
+    font-weight: bold;
+}
+.proceed-to-checkout-container {
+    width: 100%;
+    margin-top: auto;
+    padding: 0 20px;
+}
+.proceed-to-checkout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    background: #219897;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #eee;
+    
+    margin-bottom: 30px;
+}

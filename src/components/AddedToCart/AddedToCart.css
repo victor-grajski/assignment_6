@@ -1,0 +1,99 @@
+.added-to-cart-image-container {
+    grid-area: 2 / 4 / span 1 / span 2;
+}
+.added-to-cart-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.added-to-cart-info-container {
+    grid-area: 2 / 6 / span 1 / span 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.added-to-cart-label {
+    font-weight: bold;
+    font-size: 24px;
+    color: #219897;
+}
+.added-to-cart-product-name, .added-to-cart-size, .added-to-cart-color {
+    margin-top:12px;
+    font-size: 24px;
+}
+
+
+
+.added-to-cart-cta-container {
+    grid-area: 2 / 8 / span 1 / span 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.added-to-cart-view-cart-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    width: 100%;
+    background: #219897;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #EEEEEE;
+}
+.added-to-cart-checkout-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    width: 100%;
+    background: #EEEEEE;
+    border: 1px solid #219897;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #219897;
+    margin-top: auto;
+}
+
+
+.related-products-title {
+    grid-area: 3 / 4 / span 1 / span 3;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    font-size: 36px;
+}
+.related-products-grid {
+    grid-area: 4 / 4 / span 2 / span 6;
+    display: grid;
+    grid-template-columns: repeat(3, 33.333fr);
+    grid-template-rows: repeat(1, 256px);
+    grid-gap: 20px;
+    justify-content: left;
+    align-items: top;
+    align-content: start;
+    grid-auto-flow: row;
+}
+.related-products-grid-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.related-product-image-container {
+    height: 164px;
+}
+.related-product-title {
+    margin-top: 10px;
+    font-size: 24px;
+}
+.related-product-price {
+    margin-top: 5px;
+    font-size: 18px;
+}

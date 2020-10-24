@@ -1,0 +1,273 @@
+.shipping-address-container {
+    grid-area: 2 / 4 / span 3 / span 6;
+    background: #D3D3D3;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.shipping-address {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.full-name-container {
+    width: 100%;
+    padding-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+.full-name-label {
+    font-size: 24px;
+}
+.full-name-input-container {
+    width: 65%;
+    padding-right: 20px;
+    margin-left: auto;
+}
+.full-name-input-text {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.payment-info-container {
+    grid-area: 5 / 4 / span 3 / span 6;
+    background: #D3D3D3;
+    border-radius: 10px;
+}
+.review-items-container {
+    grid-area: 8 / 4 / span 4 / span 6;
+    background: #D3D3D3;
+    border-radius: 10px;
+}
+
+.address-line1-container,
+.address-line2-container,
+.city-container,
+.state-container,
+.zip-container,
+.card-number-container,
+.name-on-card-container,
+.expiration-date-container,
+.billing-check-container,
+.checkout-items-container {
+    margin-top: 30px;
+    width: 100%;
+    padding-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+.address-line1-label,
+.address-line2-label,
+.city-label,
+.state-label,
+.zip-label,
+.card-number-label,
+.name-on-card-label,
+.expiration-date-label,
+.billing-check-label,
+.checkout-items-label,
+.checkout-review-shipping-address-label,
+.checkout-review-shipping-option-label,
+.checkout-review-taxes-label {
+    font-size: 24px;
+}
+.address-line1-input-container,
+.address-line2-input-container,
+.city-input-container,
+.state-input-container,
+.zip-input-container,
+.card-number-input-container,
+.name-on-card-input-container,
+.expiration-date-input-container {
+    width: 65%;
+    padding-right: 20px;
+    margin-left: auto;
+}
+.address-line1-input-text,
+.address-line2-input-text,
+.city-input-text,
+.state-input-text,
+.zip-input-text,
+.card-number-input-text,
+.name-on-card-input-text,
+.expiration-date-input-text {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.continue-to-payment-container {
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.continue-to-payment {
+    width: 300px;
+    height: 50px;
+    background: #EEEEEE;
+    border: 1px solid #219897;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 24px;
+    color: #219897;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.billing-check-label {
+    width: 35%;
+}
+
+.checkout-item-image {
+    margin-left: 150px;
+    height: 75px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.checkout-item-info-container {
+    height: 75px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.checkout-item-name,
+.checkout-item-price,
+.checkout-review-payment-label,
+.checkout-review-order-total-label {
+    font-size: 24px;
+}
+.checkout-item-size,
+.checkout-item-color,
+.checkout-review-tax-secondary-label {
+    font-size: 18px;
+}
+.checkout-item-price {
+    height: 100%;
+    margin-left: 15px;
+    align-self: flex-start;
+}
+.checkout-review-shipping-address-container {
+    margin-top: 50px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+}
+.checkout-review-shipping-address {
+    margin-left: 20px;
+    width: 200px;
+}
+.checkout-review-shipping-address-change {
+    margin-left: 30px;
+    font-size: 14px;
+    color: #219897;
+    align-self: center;
+}
+
+
+.checkout-review-payment-container {
+    margin-top: 50px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+.checkout-review-payment {
+    margin-left: 115px;
+    width: 200px;
+}
+.checkout-review-payment-change {
+    margin-left: 28px;
+    font-size: 14px;
+    color: #219897;
+    align-self: center;
+}
+
+.checkout-review-shipping-option-container {
+    margin-top: 50px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+.standard-shipping {
+    margin-left: 40px;
+    width: 150px;
+    height: 50px;
+    background: #219897;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #EEEEEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.expedited-shipping {
+    margin-left: 30px;
+    width: 150px;
+    height: 50px;
+    background: #EEEEEE;
+    border: 1px solid #219897;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #219897;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.checkout-review-tax-container {
+    margin-top: 50px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+.checkout-review-taxes-secondary-label {
+    margin-left: 145px;
+}
+.checkout-review-tax {
+    margin-left: 50px;
+    font-size: 24px;
+}
+.checkout-review-order-total-container {
+    margin-top: 60px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+.checkout-review-order-total-secondary-label {
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #000000;
+}
+.place-your-order {
+    margin-left: 60px;
+    width: 305px;
+    height: 50px;
+    background: #219897;
+    border-radius: 10px;
+    font-size: 24px;
+    color: #EEEEEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

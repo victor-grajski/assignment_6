@@ -1,7 +1,11 @@
+// eslint-disable-next-line
 export default {
     home: "/",
-    tShirts: "/t-shirts",
-    tShirt: "/t-shirts/:id",
+    products: "/products",
+    product: "/product",
+    addedToCart: "/added-to-cart",
     cart: "/cart",
-    notImplemented: "/not-implemented"
+    checkout: "/checkout",
+    confirmation: "/confirmation",
+    orderStatus: "/order-status"
 };

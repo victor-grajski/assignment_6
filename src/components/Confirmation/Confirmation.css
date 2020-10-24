@@ -1,0 +1,100 @@
+.confirmation-container {
+    grid-area: 2 / 4 / span 3 / span 6;
+    background: #D3D3D3;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.confirmation-title {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 32px;
+}
+.confirmation-info-container {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+.confirmation-info {
+    padding-left: 20px;
+    width: 50%;
+}
+.confirmation-label {
+    font-weight: bold;
+    font-size: 16px;
+}
+.confirmation-address {
+    margin-top: 10px;
+    width: 200px;
+}
+.delivery-date {
+    margin-top: 10px;
+}
+.confirmation-image-container {
+    padding-left: 20px;
+    width: 50%;
+}
+.confirmation-image {
+    border-radius: 5px;
+    width: 100px;
+    height: 75px;
+    object-fit: cover;
+}
+
+.signup-container {
+    width: 100%;
+    margin-top: 25px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.signup-title {
+    font-weight: bold;
+    font-size: 24px;
+}
+.signup-input-container {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row; 
+}
+.signup-input-label {
+    width: 30%;
+}
+.signup-input {
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 100%;
+}
+.signup-input-text {
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 100%;
+}
+.signup-button {
+    width: 100px;
+    height: 50px;
+    background: #EEEEEE;
+    border: 1px solid #219897;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #219897;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: 40px;
+}
