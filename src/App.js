@@ -13,6 +13,7 @@ import AddedToCart from './components/AddedToCart/AddedToCart';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
 import Confirmation from './components/Confirmation/Confirmation';
+import OrderStatus from './components/OrderStatus/OrderStatus';
 
 // TODO: new page
 // TODO: title tags
@@ -84,6 +85,9 @@ const App = () => {
         </Route>
         <Route exact path={appRoutes.confirmation}>
           <Confirmation />
+        </Route>
+        <Route exact path={appRoutes.orderStatus}>
+          <OrderStatus />
         </Route>
       </Switch>
     </Context.Provider>

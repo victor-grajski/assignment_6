@@ -60,6 +60,7 @@ a {
   align-items: top;
   align-content: start;
   grid-auto-flow: column;
+  overflow: scroll;
 }
 .off-white {
   background-color: #eee;

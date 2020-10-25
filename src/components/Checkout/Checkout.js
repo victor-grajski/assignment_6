@@ -7,6 +7,7 @@ import './Checkout.css';
 import paw from '../../assets/icons/paw.svg';
 import cart from '../../assets/icons/cart.svg';
 
+// TODO: dynamic items
 const Checkout = () => {
     const context = useContext(Context);
     let numItems = 0;

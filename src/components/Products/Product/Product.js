@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import Context from '../../../Context';
 import { useParams, NavLink } from "react-router-dom";
 import appRoutes from "../../../shared/appRoutes";
