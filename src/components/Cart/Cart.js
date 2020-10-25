@@ -7,6 +7,7 @@ import './Cart.css';
 import paw from '../../assets/icons/paw.svg';
 import cart from '../../assets/icons/cart.svg';
 
+// TODO: update total/subtotal
 const Cart = () => {
     const context = useContext(Context);
     let numItems = 0;
