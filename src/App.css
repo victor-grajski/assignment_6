@@ -60,6 +60,7 @@ a {
   align-items: top;
   align-content: start;
   grid-auto-flow: column;
+  overflow: scroll;
 }
 .off-white {
   background-color: #eee;
@@ -72,6 +73,17 @@ header {
   grid-template-rows: repeat(1, 164px);
   grid-gap: 20px;
   border-bottom: 1px solid black;
+}
+.checkout-back {
+  grid-area: 1 / 8 / span 1 / span 2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-bottom: 20px;
+  font-size: 20px;
+}
+.checkout-back a {
+  color: black;
 }
 .logo-container-container {
   grid-area: 1 / 1 / span 1 / span 2;
@@ -138,6 +150,10 @@ header {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  padding-bottom: 10px;
+  color: black;
+}
+.cart-quantity-label {
   padding-bottom: 10px;
 }
 .drop-shadow {

@@ -1,5 +1,5 @@
 .confirmation-container {
-    grid-area: 2 / 4 / span 3 / span 6;
+    grid-area: 2 / 4 / span 4 / span 6;
     background: #D3D3D3;
     border-radius: 10px;
     display: flex;
@@ -20,6 +20,8 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
+    overflow-x: hidden;
+    overflow: scroll;
 }
 .confirmation-info {
     padding-left: 20px;
@@ -38,7 +40,7 @@
 }
 .confirmation-image-container {
     padding-left: 20px;
-    width: 50%;
+
 }
 .confirmation-image {
     border-radius: 5px;
@@ -97,4 +99,18 @@
     margin-left: auto;
     margin-top: 10px;
     margin-right: 40px;
+}
+.check-order-status {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 305px;
+    height: 50px;
+    background: #219897;
+    border-radius: 10px;
+    font-size: 24px;
+    color: #EEEEEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

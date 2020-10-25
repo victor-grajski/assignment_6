@@ -1,18 +1,40 @@
-import React from "react";
+import React, { useContext } from "react";
+import Context from '../../Context';
 import { NavLink } from "react-router-dom";
+import appRoutes from "../../shared/appRoutes";
 import './Products.css';
 
 import paw from '../../assets/icons/paw.svg';
 import cart from '../../assets/icons/cart.svg';
 import star from '../../assets/icons/star.svg';
+import starEmpty from '../../assets/icons/star-empty.svg';
 import strawberry from '../../assets/icons/strawberry.svg';
 import blackberry from '../../assets/icons/blackberry.svg';
 import crazyBerry from '../../assets/icons/crazy-berry.svg';
 import fireOrange from '../../assets/icons/fire-orange.svg';
-import catHarness from '../../assets/photos/cat-harness.jpg';
-import appRoutes from "../../shared/appRoutes";
 
 const Products = () => {
+  const context = useContext(Context);
+
+  let numItems = 0;
+
+  if (context.cartItems) {
+      for (let item of context.cartItems) {
+          numItems += parseInt(item.quantity);
+      }
+  }
+
+  const createStarObjects = (rating) => {
+    let starObjects = [];
+    for (let i = 0; i < rating; i++) {
+        starObjects.push(<object type="image/svg+xml" data={star} className="star-icon" key={i}>Star</object>);
+    }
+    for (let j = rating; j < 5; j++) {
+      starObjects.push(<object type="image/svg+xml" data={starEmpty} className="star-icon" key={j}>Empty Star</object>);
+    }
+    return starObjects;
+    }
+
   return (
     <div className="container off-white">
             <header>
@@ -40,6 +62,7 @@ const Products = () => {
                 </div>
                 <NavLink to={appRoutes.cart} className="cart-container">
                     <img type="image/svg+xml" src={cart} className="cart-icon" alt="cart" />
+                    <div className="cart-quantity-label">{numItems}</div>
                 </NavLink>
             </header>
             <div className="products-sidebar">
@@ -50,12 +73,12 @@ const Products = () => {
                     <div className="products-sidebar-check-title">Pet</div>
                     <div className="products-sidebar-check-item-group">
                         <div className="products-sidebar-check-item">
-                            <input type="checkbox" id="pet" name="pet" value="Cat" />
-                            <label for="pet">Cat</label>
+                            <input type="checkbox" id="pet" name="pet" value="Cat" defaultChecked />
+                            <label htmlFor="pet">Cat</label>
                         </div>
                         <div className="products-sidebar-check-item">
-                            <input type="checkbox" id="pet" name="pet" value="Dog" />
-                            <label for="pet">Dog</label>
+                            <input type="checkbox" id="pet" name="pet" value="Dog" defaultChecked />
+                            <label htmlFor="pet">Dog</label>
                         </div>
                     </div>
                     
@@ -64,85 +87,95 @@ const Products = () => {
                     <div className="products-sidebar-check-title">Product Type</div>
                     <div className="products-sidebar-check-item">
                         <input type="checkbox" id="product-type" name="product-type" value="Harness" />
-                        <label for="product-type">Harness</label>
+                        <label htmlFor="product-type">Harness</label>
                     </div>
                     <div className="products-sidebar-check-item">
                         <input type="checkbox" id="product-type" name="product-type" value="Collar" />
-                        <label for="product-type">Collar</label>
+                        <label htmlFor="product-type">Collar</label>
                     </div>
                     <div className="products-sidebar-check-item">
                         <input type="checkbox" id="product-type" name="product-type" value="Backpack" />
-                        <label for="product-type">Backpack</label>
+                        <label htmlFor="product-type">Backpack</label>
                     </div>
                 </div>
                 <div className="products-sidebar-check-group">
                     <div className="products-sidebar-check-title">Size</div>
                     <div className="products-sidebar-check-item">
                         <input type="checkbox" id="size" name="size" value="Tiny" />
-                        <label for="size">Tiny</label>
+                        <label htmlFor="size">Tiny</label>
                     </div>
                     <div className="products-sidebar-check-item">
                         <input type="checkbox" id="size" name="size" value="Small" />
-                        <label for="size">Small</label>
+                        <label htmlFor="size">Small</label>
                     </div>
                     <div className="products-sidebar-check-item">
                         <input type="checkbox" id="size" name="size" value="Medium" />
-                        <label for="size">Medium</label>
+                        <label htmlFor="size">Medium</label>
                     </div>
                     <div className="products-sidebar-check-item">
                         <input type="checkbox" id="size" name="size" value="Large" />
-                        <label for="size">Large</label>
+                        <label htmlFor="size">Large</label>
                     </div>
                 </div>
                 <div className="products-sidebar-check-group">
                     <div className="products-sidebar-check-title">Color</div>
                     <div className="products-sidebar-check-item">
                         <input type="checkbox" id="color" name="color" value="Strawberry" />
-                        <label for="color">Strawberry</label>
+                        <label htmlFor="color">Strawberry</label>
                     </div>
                     <div className="products-sidebar-check-item">
                         <input type="checkbox" id="color" name="color" value="Blackberry" />
-                        <label for="color">Blackberry</label>
+                        <label htmlFor="color">Blackberry</label>
                     </div>
                     <div className="products-sidebar-check-item">
                         <input type="checkbox" id="color" name="color" value="Crazyberry" />
-                        <label for="color">Crazyberry</label>
+                        <label htmlFor="color">Crazyberry</label>
                     </div>
                     <div className="products-sidebar-check-item">
                         <input type="checkbox" id="color" name="color" value="Fire Orange" />
-                        <label for="color">Fire Orange</label>
+                        <label htmlFor="color">Fire Orange</label>
                     </div>
                 </div>
             </div>
 
-            <div className="products">
-                <NavLink to={appRoutes.product} className="product-container">
-                    <div className="product-image-container">
-                        <img src={catHarness} className="product-image" alt="cat harness" />
-                    </div>
-                    <div className="product-title">Cat Harness</div>
-                    <div className="product-info-container">
-                        <div className="product-info-left">
-                            <div className="product-price">$19.99</div>
-                            <div className="product-colors-container">
-                                <object type="image/svg+xml" data={strawberry} className="color-icon">Strawberry</object>
-                                <object type="image/svg+xml" data={blackberry} className="color-icon">Blackberry</object>
-                                <object type="image/svg+xml" data={crazyBerry} className="color-icon">Crazy Berry</object>
-                                <object type="image/svg+xml" data={fireOrange} className="color-icon">Fire Orange</object>
+            <div className="products-wrapper">
+                <div className="selected-filters">
+                    <div className="selected-filter">Pet: Cat</div>
+                    <div className="selected-filter">Pet: Dog</div>
+                    <div className="selected-filter-label">Click to clear</div>
+                </div>
+                <div className="products-grid">
+                    {context.products.map((product) => (
+                        <NavLink 
+                            key={context.products.indexOf(product)}
+                            to={`${appRoutes.products}/${context.products.indexOf(product)}`}
+                            onClick={() => context.setSelectedProduct(product, context.products.indexOf(product))}
+                            className="product-container"
+                        >
+                            <div className="product-image-container">
+                                <img src={product.image} className="product-image" alt="cat harness" />
                             </div>
-                        </div>
-                        <div className="product-info-right">
-                            <div className="product-review-stars-container">
-                                <object type="image/svg+xml" data={star} className="star-icon">Star</object>
-                                <object type="image/svg+xml" data={star} className="star-icon">Star</object>
-                                <object type="image/svg+xml" data={star} className="star-icon">Star</object>
-                                <object type="image/svg+xml" data={star} className="star-icon">Star</object>
-                                <object type="image/svg+xml" data={star} className="star-icon">Star</object>
+                            <div className="product-title">{product.name}</div>
+                            <div className="product-info-container">
+                                <div className="product-info-left">
+                                    <div className="product-price">{product.price}</div>
+                                    <div className="product-colors-container">
+                                        <object type="image/svg+xml" data={strawberry} className="color-icon">Strawberry</object>
+                                        <object type="image/svg+xml" data={blackberry} className="color-icon">Blackberry</object>
+                                        <object type="image/svg+xml" data={crazyBerry} className="color-icon">Crazy Berry</object>
+                                        <object type="image/svg+xml" data={fireOrange} className="color-icon">Fire Orange</object>
+                                    </div>
+                                </div>
+                                <div className="product-info-right">
+                                    <div className="product-review-stars-container">
+                                        {createStarObjects(`${product.rating}`)}
+                                    </div>
+                                    <div className="product-reviews-description">{product.reviews} reviews</div>
+                                </div>
                             </div>
-                            <div className="product-reviews-description">322 reviews</div>
-                        </div>
-                    </div>
-                </NavLink>
+                        </NavLink>
+                    ))}
+                </div>
             </div>
         </div>
   );

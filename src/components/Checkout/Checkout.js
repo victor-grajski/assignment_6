@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import Context from '../../Context';
 import { NavLink } from "react-router-dom";
 import appRoutes from "../../shared/appRoutes";
 import './Checkout.css';
@@ -7,6 +8,15 @@ import paw from '../../assets/icons/paw.svg';
 import cart from '../../assets/icons/cart.svg';
 
 const Checkout = () => {
+    const context = useContext(Context);
+    let numItems = 0;
+
+    if (context.cartItems) {
+        for (let item of context.cartItems) {
+            numItems += parseInt(item.quantity);
+        }
+    }
+
     return (
         <div className="container off-white">
             <header>
@@ -19,11 +29,14 @@ const Checkout = () => {
                 <div className="page-title">
                     <h1>Checkout</h1>
                 </div>
+                <div className="checkout-back">
+                    <NavLink to={appRoutes.cart}>Back</NavLink></div>
                 <div className="products-link-container">
                     <NavLink to={appRoutes.products} className="header-link">Products</NavLink>
                 </div>
                 <NavLink to={appRoutes.cart} className="cart-container">
                     <img type="image/svg+xml" src={cart} className="cart-icon" alt="cart" />
+                    <div className="cart-quantity-label">{numItems}</div>
                 </NavLink>
             </header>
 
@@ -101,18 +114,26 @@ const Checkout = () => {
             </div>
             <div className="review-items-container drop-shadow">
                 <div className="shipping-address">Review items and shipping</div>
-                <div className="checkout-items-container">
-                    <div className="checkout-items-label">Items</div>
-                    <div className="checkout-item-image-container">
-                        <img src="assets/photos/dog-harness.jpg" className="checkout-item-image drop-shadow" alt="product" />
+
+                {context.cartItems.map((item) => (
+                    <div className="checkout-items-container" key={context.cartItems.indexOf(item)}>
+                        <div className="checkout-items-label">Item {context.cartItems.indexOf(item) + 1}</div>
+                        <div className="checkout-item-image-container">
+                            <img src={item.product.image} className="checkout-item-image drop-shadow" alt="product" />
+                        </div>
+                        <div className="checkout-item-info-container">
+                            <div className="checkout-item-name">{item.product.name}</div>
+                            <div className="checkout-item-size">Size: {item.size}</div>
+                            <div className="checkout-item-color">Color: {item.color}</div>
+                            <div className="checkout-item-color">Quantity: {item.quantity}</div>
+                        </div>
+                        <div className="checkout-item-price">$24.99</div>
                     </div>
-                    <div className="checkout-item-info-container">
-                        <div className="checkout-item-name">Dog Harness</div>
-                        <div className="checkout-item-size">Size: Large</div>
-                        <div className="checkout-item-color">Color: Blackberry</div>
-                    </div>
-                    <div className="checkout-item-price">$24.99</div>
-                </div>
+                ))}
+                
+
+
+                
                 <div className="checkout-review-shipping-address-container">
                     <div className="checkout-review-shipping-address-label">Shipping Address</div>
                     <div className="checkout-review-shipping-address">5000 Forbes Avenue, #123 Pittsburgh, PA 15217</div>

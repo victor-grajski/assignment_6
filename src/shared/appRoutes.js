@@ -2,7 +2,7 @@
 export default {
     home: "/",
     products: "/products",
-    product: "/product",
+    product: "/products/:id",
     addedToCart: "/added-to-cart",
     cart: "/cart",
     checkout: "/checkout",

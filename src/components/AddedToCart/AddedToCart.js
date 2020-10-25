@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import Context from '../../Context';
 import { NavLink } from "react-router-dom";
 import appRoutes from "../../shared/appRoutes";
 import './AddedToCart.css';
@@ -10,6 +11,16 @@ import dogHarnessFoodStorage from '../../assets/photos/dog-harness-food-storage.
 import dogGPSCollar from '../../assets/photos/dog-gps-collar.jpg';
 
 const AddedToCart = () => {
+    const context = useContext(Context);
+    const { product, size, color, quantity } = context.cartItems[0];
+    let numItems = 0;
+
+    if (context.cartItems) {
+        for (let item of context.cartItems) {
+            numItems += parseInt(item.quantity);
+        }
+    }
+    
     return (
         <div className="container off-white">
             <header>
@@ -24,21 +35,24 @@ const AddedToCart = () => {
                 </div>
                 <NavLink to={appRoutes.cart} className="cart-container">
                     <img type="image/svg+xml" src={cart} className="cart-icon" alt="cart" />
+                    <div className="cart-quantity-label">{numItems}</div>
                 </NavLink>
             </header>
 
             <div className="added-to-cart-image-container">
-                <img src="assets/photos/dog-harness.jpg" className="added-to-cart-image drop-shadow" alt="product" />
+                <img src={product.image} className="added-to-cart-image drop-shadow" alt="product" />
             </div>
             <div className="added-to-cart-info-container">
                 <div className="added-to-cart-label">Added to Cart</div>
-                <div className="added-to-cart-product-name">Dog Collar</div>
-                <div className="added-to-cart-size">Size: Large</div>
-                <div className="added-to-cart-color">Color: Blackberry</div>
+                <div className="added-to-cart-product-name">{product.name}</div>
+                <div className="added-to-cart-size">Size: {size}</div>
+                <div className="added-to-cart-color">Color: {color}</div>
+                <div className="added-to-cart-color">Quantity: {quantity}</div>
             </div>
             <div className="added-to-cart-cta-container">
                 <NavLink to={appRoutes.cart} className="added-to-cart-view-cart-button drop-shadow">View Cart</NavLink>
                 <div className="added-to-cart-checkout-button drop-shadow">Checkout</div>
+                <div className="added-to-cart-checkout-button drop-shadow">Undo</div>
             </div>
             <div className="related-products-title">Related Products</div>
             <div className="related-products-grid">
