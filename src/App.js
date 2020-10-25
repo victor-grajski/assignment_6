@@ -14,7 +14,6 @@ import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
 import Confirmation from './components/Confirmation/Confirmation';
 
-// TODO: show number of items in cart
 // TODO: new page
 // TODO: title tags
 const App = () => {
@@ -22,9 +21,9 @@ const App = () => {
     products: products,
     selectedProduct: null,
     cartItems: [],
-    cartID: 0,
     subtotal: 0
   });
+  const [cartID, incrementCartID] = useState(0);
 
   // TODO: remove
   useEffect(() => {
@@ -37,13 +36,31 @@ const App = () => {
     }
     product.id = id;
     setState({ ...state, selectedProduct: product });
-}
+  };
+
+  const addToCart = (product, quantity, size, color) => {
+    setState({
+      ...state,
+      cartItems: [
+        {
+          cartID: cartID,
+          product: product,
+          quantity: quantity,
+          size: size,
+          color: color
+        }, 
+        ...state.cartItems
+      ]
+    });
+    incrementCartID(cartID + 1);
+  };
 
   return (
     <Context.Provider
       value={{
         ...state,
-        setSelectedProduct: setSelectedProduct
+        setSelectedProduct: setSelectedProduct,
+        addToCart: addToCart,
       }}
     >
       <Switch>

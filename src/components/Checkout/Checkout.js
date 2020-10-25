@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import Context from '../../Context';
 import { NavLink } from "react-router-dom";
 import appRoutes from "../../shared/appRoutes";
 import './Checkout.css';
@@ -7,6 +8,15 @@ import paw from '../../assets/icons/paw.svg';
 import cart from '../../assets/icons/cart.svg';
 
 const Checkout = () => {
+    const context = useContext(Context);
+    let numItems = 0;
+
+    if (context.cartItems) {
+        for (let item of context.cartItems) {
+            numItems += parseInt(item.quantity);
+        }
+    }
+
     return (
         <div className="container off-white">
             <header>
@@ -26,6 +36,7 @@ const Checkout = () => {
                 </div>
                 <NavLink to={appRoutes.cart} className="cart-container">
                     <img type="image/svg+xml" src={cart} className="cart-icon" alt="cart" />
+                    <div className="cart-quantity-label">{numItems}</div>
                 </NavLink>
             </header>
 

@@ -7,6 +7,7 @@ import './Products.css';
 import paw from '../../assets/icons/paw.svg';
 import cart from '../../assets/icons/cart.svg';
 import star from '../../assets/icons/star.svg';
+import starEmpty from '../../assets/icons/star-empty.svg';
 import strawberry from '../../assets/icons/strawberry.svg';
 import blackberry from '../../assets/icons/blackberry.svg';
 import crazyBerry from '../../assets/icons/crazy-berry.svg';
@@ -14,6 +15,25 @@ import fireOrange from '../../assets/icons/fire-orange.svg';
 
 const Products = () => {
   const context = useContext(Context);
+
+  let numItems = 0;
+
+  if (context.cartItems) {
+      for (let item of context.cartItems) {
+          numItems += parseInt(item.quantity);
+      }
+  }
+
+  const createStarObjects = (rating) => {
+    let starObjects = [];
+    for (let i = 0; i < rating; i++) {
+        starObjects.push(<object type="image/svg+xml" data={star} className="star-icon" key={i}>Star</object>);
+    }
+    for (let j = rating; j < 5; j++) {
+      starObjects.push(<object type="image/svg+xml" data={starEmpty} className="star-icon" key={j}>Empty Star</object>);
+    }
+    return starObjects;
+    }
 
   return (
     <div className="container off-white">
@@ -42,6 +62,7 @@ const Products = () => {
                 </div>
                 <NavLink to={appRoutes.cart} className="cart-container">
                     <img type="image/svg+xml" src={cart} className="cart-icon" alt="cart" />
+                    <div className="cart-quantity-label">{numItems}</div>
                 </NavLink>
             </header>
             <div className="products-sidebar">
@@ -121,7 +142,7 @@ const Products = () => {
                 <div className="selected-filters">
                     <div className="selected-filter">Pet: Cat</div>
                     <div className="selected-filter">Pet: Dog</div>
-                    <div className="selected-filter-label">Tap to clear</div>
+                    <div className="selected-filter-label">Click to clear</div>
                 </div>
                 <div className="products-grid">
                     {context.products.map((product) => (
@@ -147,11 +168,7 @@ const Products = () => {
                                 </div>
                                 <div className="product-info-right">
                                     <div className="product-review-stars-container">
-                                        <object type="image/svg+xml" data={star} className="star-icon">Star</object>
-                                        <object type="image/svg+xml" data={star} className="star-icon">Star</object>
-                                        <object type="image/svg+xml" data={star} className="star-icon">Star</object>
-                                        <object type="image/svg+xml" data={star} className="star-icon">Star</object>
-                                        <object type="image/svg+xml" data={star} className="star-icon">Star</object>
+                                        {createStarObjects(`${product.rating}`)}
                                     </div>
                                     <div className="product-reviews-description">{product.reviews} reviews</div>
                                 </div>

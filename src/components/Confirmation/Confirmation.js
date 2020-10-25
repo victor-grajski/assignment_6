@@ -24,6 +24,7 @@ const Confirmation = () => {
                 </div>
                 <NavLink to={appRoutes.cart} className="cart-container">
                     <img type="image/svg+xml" src={cart} className="cart-icon" alt="cart" />
+                    <div className="cart-quantity-label">0</div>
                 </NavLink>
             </header>
 
