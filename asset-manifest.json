@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/assignment_6/static/css/main.c5c457c2.chunk.css",
-    "main.js": "/assignment_6/static/js/main.a8e7e5a0.chunk.js",
-    "main.js.map": "/assignment_6/static/js/main.a8e7e5a0.chunk.js.map",
-    "runtime-main.js": "/assignment_6/static/js/runtime-main.abb7865e.js",
-    "runtime-main.js.map": "/assignment_6/static/js/runtime-main.abb7865e.js.map",
-    "static/js/2.2afdf979.chunk.js": "/assignment_6/static/js/2.2afdf979.chunk.js",
-    "static/js/2.2afdf979.chunk.js.map": "/assignment_6/static/js/2.2afdf979.chunk.js.map",
-    "static/js/3.2e1d50ed.chunk.js": "/assignment_6/static/js/3.2e1d50ed.chunk.js",
-    "static/js/3.2e1d50ed.chunk.js.map": "/assignment_6/static/js/3.2e1d50ed.chunk.js.map",
+    "main.css": "/assignment_6/static/css/main.37182855.chunk.css",
+    "main.js": "/assignment_6/static/js/main.36f38a5d.chunk.js",
+    "main.js.map": "/assignment_6/static/js/main.36f38a5d.chunk.js.map",
+    "runtime-main.js": "/assignment_6/static/js/runtime-main.d185e56a.js",
+    "runtime-main.js.map": "/assignment_6/static/js/runtime-main.d185e56a.js.map",
+    "static/js/2.6b4ac577.chunk.js": "/assignment_6/static/js/2.6b4ac577.chunk.js",
+    "static/js/2.6b4ac577.chunk.js.map": "/assignment_6/static/js/2.6b4ac577.chunk.js.map",
+    "static/js/3.2b3699a5.chunk.js": "/assignment_6/static/js/3.2b3699a5.chunk.js",
+    "static/js/3.2b3699a5.chunk.js.map": "/assignment_6/static/js/3.2b3699a5.chunk.js.map",
     "index.html": "/assignment_6/index.html",
-    "static/css/main.c5c457c2.chunk.css.map": "/assignment_6/static/css/main.c5c457c2.chunk.css.map",
-    "static/js/2.2afdf979.chunk.js.LICENSE.txt": "/assignment_6/static/js/2.2afdf979.chunk.js.LICENSE.txt",
+    "static/css/main.37182855.chunk.css.map": "/assignment_6/static/css/main.37182855.chunk.css.map",
+    "static/js/2.6b4ac577.chunk.js.LICENSE.txt": "/assignment_6/static/js/2.6b4ac577.chunk.js.LICENSE.txt",
     "static/media/blackberry-detail-selected.44b007c7.svg": "/assignment_6/static/media/blackberry-detail-selected.44b007c7.svg",
     "static/media/blackberry-detail.dcf62edf.svg": "/assignment_6/static/media/blackberry-detail.dcf62edf.svg",
     "static/media/blackberry.8c8a05f0.svg": "/assignment_6/static/media/blackberry.8c8a05f0.svg",
@@ -23,6 +23,8 @@
     "static/media/cat-harness-food-storage.e12efe1e.jpg": "/assignment_6/static/media/cat-harness-food-storage.e12efe1e.jpg",
     "static/media/cat-harness-water-storage.5ce74875.jpg": "/assignment_6/static/media/cat-harness-water-storage.5ce74875.jpg",
     "static/media/cat-harness.c9a613f3.jpg": "/assignment_6/static/media/cat-harness.c9a613f3.jpg",
+    "static/media/check-empty.cc11e42b.svg": "/assignment_6/static/media/check-empty.cc11e42b.svg",
+    "static/media/check-full.b75cb596.svg": "/assignment_6/static/media/check-full.b75cb596.svg",
     "static/media/crazy-berry.eb727f74.svg": "/assignment_6/static/media/crazy-berry.eb727f74.svg",
     "static/media/crazyberry-detail-selected.4cda4154.svg": "/assignment_6/static/media/crazyberry-detail-selected.4cda4154.svg",
     "static/media/crazyberry-detail.a24c01d4.svg": "/assignment_6/static/media/crazyberry-detail.a24c01d4.svg",
@@ -50,9 +52,9 @@
     "static/media/strawberry.e3ed9b0e.svg": "/assignment_6/static/media/strawberry.e3ed9b0e.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.abb7865e.js",
-    "static/js/2.2afdf979.chunk.js",
-    "static/css/main.c5c457c2.chunk.css",
-    "static/js/main.a8e7e5a0.chunk.js"
+    "static/js/runtime-main.d185e56a.js",
+    "static/js/2.6b4ac577.chunk.js",
+    "static/css/main.37182855.chunk.css",
+    "static/js/main.36f38a5d.chunk.js"
   ]
 }
