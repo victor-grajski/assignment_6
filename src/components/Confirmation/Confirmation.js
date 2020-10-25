@@ -9,7 +9,6 @@ import cart from '../../assets/icons/cart.svg';
 
 const Confirmation = () => {
     const context = useContext(Context);
-    const { product } = context.cartItems[0];
     let numItems = 0;
 
     if (context.cartItems) {
@@ -47,9 +46,13 @@ const Confirmation = () => {
                         <div className="confirmation-address">5000 Forbes Avenue, #123 Pittsburgh, PA 15217</div>
                         <div className="delivery-date">Estimated delivery: Sunday, Sep 27</div>
                     </div>
-                    <div className="confirmation-image-container">
-                        <img src={product.image} className="confirmation-image drop-shadow" alt="product" />
-                    </div>
+
+                    {context.cartItems.map((item) => (
+                        <div className="confirmation-image-container" key={context.cartItems.indexOf(item)}>
+                            <img src={item.product.image} className="confirmation-image drop-shadow" alt="product" />
+                        </div>
+                    ))}
+                    
                 </div>
                 <div className="signup-container">
                     <div className="signup-title">Sign up for email alerts</div>
