@@ -29,6 +29,7 @@ import huskerino from '../../../assets/photos/huskerino.jpg';
 import pointyBoye from '../../../assets/photos/pointy-boye.jpg';
 
 // TODO: cat additional images
+// TODO: descriptions
 const Product = () => {
   const context = useContext(Context);
   const { id } = useParams();
