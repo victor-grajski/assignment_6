@@ -28,6 +28,7 @@ import dogHarnessWaterStorage from '../../../assets/photos/dog-harness-water-sto
 import huskerino from '../../../assets/photos/huskerino.jpg';
 import pointyBoye from '../../../assets/photos/pointy-boye.jpg';
 
+// TODO: change image
 // TODO: cat additional images
 // TODO: descriptions
 const Product = () => {
