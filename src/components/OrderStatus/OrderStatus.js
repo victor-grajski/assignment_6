@@ -9,7 +9,6 @@ import cart from '../../assets/icons/cart.svg';
 import checkFull from '../../assets/icons/check-full.svg';
 import checkEmpty from '../../assets/icons/check-empty.svg';
 
-// TODO: reachable from main page?
 const OrderStatus = () => {
     const context = useContext(Context);
 
