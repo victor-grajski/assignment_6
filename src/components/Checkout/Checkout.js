@@ -7,6 +7,7 @@ import './Checkout.css';
 import paw from '../../assets/icons/paw.svg';
 import cart from '../../assets/icons/cart.svg';
 
+// TODO: empty cart on checkout
 const Checkout = () => {
     useEffect(() => {
         document.title = "Checkout | Muddy Paws"
@@ -156,7 +157,7 @@ const Checkout = () => {
                 <div className="checkout-review-tax-container">
                     <div className="checkout-review-taxes-label">Taxes</div>
                     <div className="checkout-review-taxes-secondary-label">PA Sales Tax</div>
-                    <div className="checkout-review-tax">$1.44</div>
+                    <div className="checkout-review-tax">${(context.subtotal * 0.06).toFixed(2)}</div>
                 </div>
                 <div className="checkout-review-order-total-container">
                     <div className="checkout-review-order-total-label">Order total:</div>
