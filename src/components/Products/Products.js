@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Context from '../../Context';
 import { NavLink } from "react-router-dom";
 import appRoutes from "../../shared/appRoutes";
@@ -14,6 +14,9 @@ import crazyBerry from '../../assets/icons/crazy-berry.svg';
 import fireOrange from '../../assets/icons/fire-orange.svg';
 
 const Products = () => {
+    useEffect(() => {
+        document.title = "Our Products | Muddy Paws";
+      });
   const context = useContext(Context);
 
   let numItems = 0;

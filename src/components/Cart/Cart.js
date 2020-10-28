@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Context from '../../Context';
 import { NavLink } from "react-router-dom";
 import appRoutes from "../../shared/appRoutes";
@@ -7,8 +7,12 @@ import './Cart.css';
 import paw from '../../assets/icons/paw.svg';
 import cart from '../../assets/icons/cart.svg';
 
-// TODO: update total/subtotal
+// TODO: update subtotal on quantity change
 const Cart = () => {
+    useEffect(() => {
+        document.title = "Cart | Muddy Paws"
+    }, []);
+
     const context = useContext(Context);
     let numItems = 0;
 
@@ -54,7 +58,7 @@ const Cart = () => {
                                 <div className="cart-item-quantity-container">
                                     <div className="cart-item-quantity-label">Quantity</div>
                                     <div className="cart-item-quantity-dropdown-container">
-                                        <select name="cart-quantity-options" className="cart-quantity-dropdown dropdown" id="cart-quantity-options">
+                                        <select defaultValue={item.quantity} name="cart-quantity-options" className="cart-quantity-dropdown dropdown" id="cart-quantity-options">
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -64,7 +68,7 @@ const Cart = () => {
                                 </div>
                             </div>
                             <div className="cart-side-info-container">
-                                <div className="cart-item-price">{item.product.price}</div>
+                                <div className="cart-item-price">${item.product.price}</div>
                                 <div className="cart-item-delete">Delete</div>
                             </div>
                         </div>
@@ -81,7 +85,7 @@ const Cart = () => {
             <div className="cart-cta-container">
                 <div className="subtotal-container">
                     <div className="subtotal-label">Subtotal:</div>
-                    <div className="subtotal-num">$24.99</div>
+                    <div className="subtotal-num">${context.subtotal.toFixed(2)}</div>
                 </div>
                 <div className="proceed-to-checkout-container">
                     <NavLink to={appRoutes.checkout} className="proceed-to-checkout drop-shadow">Proceed to Checkout</NavLink>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Context from '../../Context';
 import { NavLink } from "react-router-dom";
 import appRoutes from "../../shared/appRoutes";
@@ -7,7 +7,12 @@ import './Checkout.css';
 import paw from '../../assets/icons/paw.svg';
 import cart from '../../assets/icons/cart.svg';
 
+// TODO: empty cart on checkout
 const Checkout = () => {
+    useEffect(() => {
+        document.title = "Checkout | Muddy Paws"
+    }, []);
+
     const context = useContext(Context);
     let numItems = 0;
 
@@ -152,11 +157,11 @@ const Checkout = () => {
                 <div className="checkout-review-tax-container">
                     <div className="checkout-review-taxes-label">Taxes</div>
                     <div className="checkout-review-taxes-secondary-label">PA Sales Tax</div>
-                    <div className="checkout-review-tax">$1.44</div>
+                    <div className="checkout-review-tax">${(context.subtotal * 0.06).toFixed(2)}</div>
                 </div>
                 <div className="checkout-review-order-total-container">
                     <div className="checkout-review-order-total-label">Order total:</div>
-                    <div className="checkout-review-order-total-secondary-label">$35.42</div>
+                    <div className="checkout-review-order-total-secondary-label">${(parseInt(context.subtotal) + parseInt(8.99) + parseInt(context.subtotal * 0.06)).toFixed(2)}</div>
                     <NavLink to={appRoutes.confirmation} className="place-your-order drop-shadow">Place your order</NavLink>
                 </div>
             </div>

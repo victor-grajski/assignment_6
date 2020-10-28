@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Context from '../../Context';
 import { NavLink } from "react-router-dom";
 import appRoutes from "../../shared/appRoutes";
@@ -8,6 +8,10 @@ import paw from '../../assets/icons/paw.svg';
 import cart from '../../assets/icons/cart.svg';
 
 const Confirmation = () => {
+    useEffect(() => {
+        document.title = "Confirmation | Muddy Paws"
+    }, []);
+
     const context = useContext(Context);
     let numItems = 0;
 

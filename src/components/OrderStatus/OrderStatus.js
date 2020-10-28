@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Context from '../../Context';
 import { NavLink } from "react-router-dom";
 import appRoutes from "../../shared/appRoutes";
@@ -10,6 +10,10 @@ import checkFull from '../../assets/icons/check-full.svg';
 import checkEmpty from '../../assets/icons/check-empty.svg';
 
 const OrderStatus = () => {
+    useEffect(() => {
+        document.title = "Order Status | Muddy Paws"
+    }, []);
+
     const context = useContext(Context);
 
     return (
@@ -66,10 +70,10 @@ const OrderStatus = () => {
                             <div className="order-status-tax">Tax</div>
                         </div>
                         <div className="order-total-right">
-                            <div className="order-status-total-amount">$35.42</div>
-                            <div className="order-status-subtotal-amount">$24.99</div>
+                            <div className="order-status-total-amount">${(parseInt(context.subtotal) + parseInt(8.99) + parseInt(context.subtotal * 0.06)).toFixed(2)}</div>
+                            <div className="order-status-subtotal-amount">${context.subtotal.toFixed(2)}</div>
                             <div className="order-status-shipping-amount">$8.99</div>
-                            <div className="order-status-tax-amount">$1.44</div>
+                            <div className="order-status-tax-amount">${(context.subtotal * 0.06).toFixed(2)}</div>
                         </div>
                     </div>
                 </div>
@@ -87,7 +91,7 @@ const OrderStatus = () => {
                                         <div className="order-status-item-color">Color: {item.color}</div>
                                         <div className="order-status-item-quantity">Quantity: {item.quantity}</div>
                                     </div>
-                                    <div className="order-status-item-price">{item.product.price}</div>
+                                    <div className="order-status-item-price">${item.product.price}</div>
                                 </div>
                                 <div className="order-status-item-line"></div>
                             </div>
