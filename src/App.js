@@ -15,7 +15,6 @@ import Checkout from './components/Checkout/Checkout';
 import Confirmation from './components/Confirmation/Confirmation';
 import OrderStatus from './components/OrderStatus/OrderStatus';
 
-// TODO: title tags
 const App = () => {
   const [state, setState] = useState({
     products: products,
@@ -38,19 +37,20 @@ const App = () => {
     setState({ ...state, selectedProduct: product });
   };
 
-  const addToCart = (product, quantity, size, color) => {
+  const addToCart = (product, quantity, size, color, image) => {
     setState({
       ...state,
       cartItems: [
         {
           cartID: cartID,
-          product: product,
+          product: { ...product, image: image },
           quantity: quantity,
           size: size,
           color: color
         }, 
         ...state.cartItems
-      ]
+      ],
+      subtotal: state.subtotal + (product.price * parseInt(quantity))
     });
     incrementCartID(cartID + 1);
   };

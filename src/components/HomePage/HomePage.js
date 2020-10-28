@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import './HomePage.css';
 
@@ -14,6 +14,10 @@ import appRoutes from "../../shared/appRoutes";
 
 
 const HomePage = () => {
+    useEffect(() => {
+        document.title = "Muddy Paws Adventure Gear"
+    });
+
   return (
     <div className="container">
         <div className="landing-background-image-container">

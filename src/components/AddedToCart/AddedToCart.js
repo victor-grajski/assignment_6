@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Context from '../../Context';
 import { NavLink } from "react-router-dom";
 import appRoutes from "../../shared/appRoutes";
@@ -11,6 +11,10 @@ import dogHarnessFoodStorage from '../../assets/photos/dog-harness-food-storage.
 import dogGPSCollar from '../../assets/photos/dog-gps-collar.jpg';
 
 const AddedToCart = () => {
+    useEffect(() => {
+        document.title = "Item Added to Cart"
+    }, []);
+
     const context = useContext(Context);
     const { product, size, color, quantity } = context.cartItems[0];
     let numItems = 0;

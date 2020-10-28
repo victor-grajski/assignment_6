@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Context from '../../../Context';
 import { useParams, NavLink } from "react-router-dom";
 import appRoutes from "../../../shared/appRoutes";
@@ -28,20 +28,27 @@ import dogHarnessWaterStorage from '../../../assets/photos/dog-harness-water-sto
 import huskerino from '../../../assets/photos/huskerino.jpg';
 import pointyBoye from '../../../assets/photos/pointy-boye.jpg';
 
-// TODO: change image
-// TODO: cat additional images
-// TODO: descriptions
+import kitty1 from '../../../assets/photos/kitty1.jpg';
+import kitty2 from '../../../assets/photos/kitty2.jpg';
+import kitty3 from '../../../assets/photos/kitty3.jpg';
+import kitty4 from '../../../assets/photos/kitty4.jpg';
+
 const Product = () => {
   const context = useContext(Context);
   const { id } = useParams();
   const product = products[id];
-  let { image, name, description, reviews, type, price, rating } = product;
+  let { name, description, reviews, type, price, rating } = product;
 
-  const [size, setSize] = useState("Tiny");
-  const [color, setColor] = useState("Blackberry");
+  const [size, setSize] = useState("Large");
+  const [color, setColor] = useState("Strawberry");
+  const [image, setImage] = useState(product.image);
   const [quantity, setQuantity] = useState(1);
 
   let numItems = 0;
+
+  useEffect(() => {
+    document.title = `${name} | Muddy Paws`
+  });
 
   if (context.cartItems) {
       for (let item of context.cartItems) {
@@ -112,10 +119,10 @@ const Product = () => {
                 </div>
             ) : (
                 <div>
-                    <img src="assets/photos/dog-harness-food-storage.jpg" className="detail-addl-image drop-shadow" alt="additional" />
-                    <img src="assets/photos/dog-harness-water-storage.jpg" className="detail-addl-image drop-shadow" alt="additional" />
-                    <img src="assets/photos/huskerino.jpg" className="detail-addl-image drop-shadow" alt="additional" />
-                    <img src="assets/photos/pointy-boye.jpg" className="detail-addl-image drop-shadow" alt="additional" />
+                    <img src={kitty1} className="detail-addl-image drop-shadow" alt="additional" />
+                    <img src={kitty2} className="detail-addl-image drop-shadow" alt="additional" />
+                    <img src={kitty3} className="detail-addl-image drop-shadow" alt="additional" />
+                    <img src={kitty4} className="detail-addl-image drop-shadow" alt="additional" />
                 </div>
             )}
             
@@ -127,7 +134,7 @@ const Product = () => {
         <div className="detail-main-info-wrapper">
             <div className="detail-main-info">
                 <h3 className="detail-title">{name}</h3>
-                <p className="detail-price">{price}</p>
+                <p className="detail-price">${price}</p>
                 <div className="detail-info-reviews-container">
                     <div className="detail-info-review-stars-container">
                         {createStarObjects()}
@@ -158,7 +165,7 @@ const Product = () => {
                                 <img 
                                     type="image/svg+xml" 
                                     src={strawberryDetailSelected} 
-                                    onClick={() => setColor("Strawberry")}
+                                    onClick={() => { setColor("Strawberry"); setImage(`${product.colors.strawberry}`) }}
                                     className="color-icon"
                                     alt="strawberry"  
                                 />
@@ -166,7 +173,7 @@ const Product = () => {
                                 <img 
                                     type="image/svg+xml" 
                                     src={strawberryDetail} 
-                                    onClick={() => setColor("Strawberry")}
+                                    onClick={() => { setColor("Strawberry"); setImage(`${product.colors.strawberry}`) }}
                                     className="color-icon"
                                     alt="strawberry"  
                                 />
@@ -178,7 +185,7 @@ const Product = () => {
                                 <img 
                                     type="image/svg+xml" 
                                     src={blackberryDetailSelected} 
-                                    onClick={() => setColor("Blackberry")}
+                                    onClick={() => { setColor("Blackberry"); setImage(`${product.colors.blackberry}`) }}
                                     className="color-icon"
                                     alt="Blackberry"  
                                 />
@@ -186,7 +193,7 @@ const Product = () => {
                                 <img 
                                     type="image/svg+xml" 
                                     src={blackberryDetail} 
-                                    onClick={() => setColor("Blackberry")}
+                                    onClick={() => { setColor("Blackberry"); setImage(`${product.colors.blackberry}`) }}
                                     className="color-icon"
                                     alt="Blackberry"  
                                 />
@@ -198,7 +205,7 @@ const Product = () => {
                                 <img 
                                     type="image/svg+xml" 
                                     src={crazyBerryDetailSelected} 
-                                    onClick={() => setColor("Crazy Berry")}
+                                    onClick={() => { setColor("Crazy Berry"); setImage(`${product.colors.crazyBerry}`) }}
                                     className="color-icon"
                                     alt="Crazy Berry"  
                                 />
@@ -206,7 +213,7 @@ const Product = () => {
                                 <img 
                                     type="image/svg+xml" 
                                     src={crazyBerryDetail} 
-                                    onClick={() => setColor("Crazy Berry")}
+                                    onClick={() => { setColor("Crazy Berry"); setImage(`${product.colors.crazyBerry}`) }}
                                     className="color-icon"
                                     alt="Crazy Berry"  
                                 />
@@ -218,7 +225,7 @@ const Product = () => {
                                 <img 
                                     type="image/svg+xml" 
                                     src={fireOrangeDetailSelected} 
-                                    onClick={() => setColor("Fire Orange")}
+                                    onClick={() => { setColor("Fire Orange"); setImage(`${product.colors.fireOrange}`) }}
                                     className="color-icon"
                                     alt="Fire Orange"  
                                 />
@@ -226,7 +233,7 @@ const Product = () => {
                                 <img 
                                     type="image/svg+xml" 
                                     src={fireOrangeDetail} 
-                                    onClick={() => setColor("Fire Orange")}
+                                    onClick={() => { setColor("Fire Orange"); setImage(`${product.colors.fireOrange}`) }}
                                     className="color-icon"
                                     alt="Fire Orange"  
                                 />
@@ -331,7 +338,7 @@ const Product = () => {
             <div className="add-to-cart-container">
                 <NavLink 
                     to={appRoutes.addedToCart} 
-                    onClick={() => context.addToCart(product, quantity, size, color)}
+                    onClick={() => context.addToCart(product, quantity, size, color, image)}
                     className="detail-add-to-cart-link">
                     <div className="detail-add-to-cart-button drop-shadow">
                         Add to Cart
