@@ -55,12 +55,49 @@ const App = () => {
     incrementCartID(cartID + 1);
   };
 
+  const removeFromCart = (cartID) => {
+    let cartItems = state.cartItems;
+    let item = cartItems.filter(item => item.cartID === cartID)[0];
+    let itemIndex = cartItems.indexOf(item);
+    cartItems.splice(itemIndex, 1);
+    let subtotal = updateSubtotal(cartItems);
+    setState({
+      ...state,
+      cartItems: cartItems,
+      subtotal: subtotal
+    });
+  };
+
+  const updateSubtotal = (cartItems) => {
+    let subtotal = 0;
+    for (let item of cartItems) {
+      subtotal += item.product.price * item.quantity;
+    }
+    return subtotal;
+  }
+
+  const updateCartQuantity = (cartID, newQuantity) => {
+    let cartItems = [...state.cartItems];
+    let item = cartItems.filter(item => item.cartID === cartID)[0];
+    if (item) {
+        item.quantity = newQuantity;
+        let subtotal = updateSubtotal(cartItems);
+        setState({ 
+          ...state,
+          cartItems: cartItems,
+          subtotal: subtotal 
+        });
+      }
+  }
+
   return (
     <Context.Provider
       value={{
         ...state,
         setSelectedProduct: setSelectedProduct,
         addToCart: addToCart,
+        removeFromCart: removeFromCart,
+        updateCartQuantity: updateCartQuantity,
       }}
     >
       <Switch>
