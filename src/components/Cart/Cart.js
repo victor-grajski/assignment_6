@@ -44,38 +44,48 @@ const Cart = () => {
             </header>
 
             <div className="cart-items-container">
-
-                {context.cartItems.map((item) => (
-                    <div className="cart-item-container" key={context.cartItems.indexOf(item)}>
-                        <div className="cart-item">
-                            <div className="cart-image-container">
-                                <img src={item.product.image} className="cart-image drop-shadow" alt="product" />
-                            </div>
-                            <div className="cart-main-info-container">
-                                <div className="cart-item-title">{item.product.name}</div>
-                                <div className="cart-item-size">Size: {item.size}</div>
-                                <div className="cart-item-color">Color: {item.color}</div>
-                                <div className="cart-item-quantity-container">
-                                    <div className="cart-item-quantity-label">Quantity</div>
-                                    <div className="cart-item-quantity-dropdown-container">
-                                        <select defaultValue={item.quantity} name="cart-quantity-options" className="cart-quantity-dropdown dropdown" id="cart-quantity-options">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                        </select>
+                {context.cartItems.length > 0 ? (
+                    <div>
+                        {context.cartItems.map((item) => (
+                            <div className="cart-item-container" key={context.cartItems.indexOf(item)}>
+                                <div className="cart-item">
+                                    <div className="cart-image-container">
+                                        <img src={item.product.image} className="cart-image drop-shadow" alt="product" />
+                                    </div>
+                                    <div className="cart-main-info-container">
+                                        <div className="cart-item-title">{item.product.name}</div>
+                                        <div className="cart-item-size">Size: {item.size}</div>
+                                        <div className="cart-item-color">Color: {item.color}</div>
+                                        <div className="cart-item-quantity-container">
+                                            <div className="cart-item-quantity-label">Quantity</div>
+                                            <div className="cart-item-quantity-dropdown-container">
+                                                <select 
+                                                    defaultValue={item.quantity}
+                                                    onChange={(e) => context.updateCartQuantity(item.cartID, e.target.value)}
+                                                    name="cart-quantity-options" 
+                                                    className="cart-quantity-dropdown dropdown" 
+                                                    id="cart-quantity-options"
+                                                >
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="cart-side-info-container">
+                                        <div className="cart-item-price">${item.product.price}</div>
+                                        <div className="cart-item-delete" onClick={() => context.removeFromCart(item.cartID)}>Delete</div>
                                     </div>
                                 </div>
+                                <div className="cart-hr"></div>
                             </div>
-                            <div className="cart-side-info-container">
-                                <div className="cart-item-price">${item.product.price}</div>
-                                <div className="cart-item-delete">Delete</div>
-                            </div>
-                        </div>
-                        <div className="cart-hr"></div>
+                        ))}
                     </div>
-                ))}
-
+                ) : (
+                    <div>Your Cart is empty</div>
+                )}
             </div>
 
             
